@@ -1,0 +1,3 @@
+fi: { language: Kieli, top: Sivun alkuun, skip: Siirry sisältöön }
+sv: { language: Språk, top: Till början, skip: Gå till innehållet }
+en: { language: Language, top: Back to top, skip: Skip to content }

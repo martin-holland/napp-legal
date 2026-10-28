@@ -1,3 +1,8 @@
 title: Napp
-description: Privacy policy for the Napp fishing app
-theme: jekyll-theme-primer
+description: Napp, the fishing app for Finnish waters. Privacy policy in Finnish, Swedish and English.
+baseurl: /napp-legal
+url: https://martin-holland.github.io
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }
+exclude: [README.md]

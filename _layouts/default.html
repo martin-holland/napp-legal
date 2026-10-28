@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/icon.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  {% for l in site.data.langs %}<link rel="alternate" hreflang="{{ l.code }}" href="{{ l.path | absolute_url }}">
+  {% endfor %}
+</head>
+<body>
+  <a class="skip" href="#main">{{ site.data.ui[page.lang].skip | default: 'Skip to content' }}</a>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/icon.png' | relative_url }}" alt="" width="36" height="36">
+        <span>Napp</span>
+      </a>
+      {% if page.lang %}
+      <nav class="langs" aria-label="{{ site.data.ui[page.lang].language }}">
+        {% for l in site.data.langs %}
+        <a href="{{ l.path | relative_url }}" lang="{{ l.code }}" hreflang="{{ l.code }}"{% if l.code == page.lang %} aria-current="page"{% endif %}>{{ l.short }}</a>
+        {% endfor %}
+      </nav>
+      {% endif %}
+    </div>
+  </header>
+
+  <main id="main" class="wrap {% if page.lang %}doc{% endif %}">
+    {{ content }}
+  </main>
+
+  <footer class="wrap foot">
+    <p>Napp · Beacon International Oy · <a href="mailto:dev@beacon-international.org">dev@beacon-international.org</a></p>
+    {% if page.lang %}<p><a href="#main">{{ site.data.ui[page.lang].top }}</a></p>{% endif %}
+  </footer>
+</body>
+</html>

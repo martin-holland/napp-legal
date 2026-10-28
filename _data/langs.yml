@@ -1,0 +1,3 @@
+- { code: fi, short: FI, path: /fi/ }
+- { code: sv, short: SV, path: /sv/ }
+- { code: en, short: EN, path: /en/ }

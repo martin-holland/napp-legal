@@ -1,0 +1,100 @@
+/* Napp public pages. Colours follow the app's palette (src/ui/palette.ts in napp-app). */
+:root {
+  --bg: #F4F6F5;
+  --card: #FFFFFF;
+  --text: #0E1A17;
+  --muted: #4A5A55;
+  --border: #C9D3CF;
+  --accent: #0B6E5B;
+  --accent-text: #FFFFFF;
+  --accent-soft: #E3F1EC;
+  --radius: 14px;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0E1513;
+    --card: #17201D;
+    --text: #EEF3F1;
+    --muted: #AEBCB7;
+    --border: #2E3A36;
+    --accent: #5CD3B4;
+    --accent-text: #04211A;
+    --accent-soft: #123129;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.wrap { max-width: 46rem; margin: 0 auto; padding: 0 16px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 8px; background: var(--card); padding: 8px 12px; border-radius: 8px; z-index: 10; }
+
+/* Header */
+.top { background: var(--card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 5; }
+.top-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 800; font-size: 1.25rem; }
+.brand img { border-radius: 9px; }
+.langs { display: flex; gap: 6px; }
+.langs a {
+  min-width: 48px; min-height: 40px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 0 10px; border-radius: 10px; border: 1px solid var(--border);
+  color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem;
+}
+.langs a[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+
+/* Policy text */
+main { padding-top: 24px; padding-bottom: 32px; }
+.doc { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-top: 24px; padding: 8px 28px 28px; }
+@media (max-width: 600px) { .doc { padding: 4px 18px 20px; border-radius: 0; border-left: 0; border-right: 0; margin-top: 0; } }
+h1 { font-size: 2rem; line-height: 1.2; margin: 24px 0 4px; letter-spacing: -0.01em; }
+h1 + p { color: var(--muted); margin-top: 0; }
+h2 { font-size: 1.3rem; margin: 2em 0 0.5em; padding-top: 1em; border-top: 1px solid var(--border); }
+h1 + p + p, h1 + p + ul { margin-top: 1.2em; }
+ul { padding-left: 1.3em; }
+li { margin: 0.3em 0; }
+li::marker { color: var(--accent); }
+strong { font-weight: 700; }
+
+/* The short summary at the top of the policy */
+h1 + p + p + ul {
+  background: var(--accent-soft); border-radius: 12px; padding: 14px 18px 14px 34px; margin: 0.5em 0 0;
+}
+
+/* Tables scroll sideways on phones instead of squeezing */
+table { display: block; overflow-x: auto; border-collapse: collapse; margin: 1em 0; font-size: 0.92rem; width: 100%; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); min-width: 9rem; }
+th { background: var(--bg); font-weight: 700; }
+
+/* Landing page */
+.hero { text-align: center; padding: 40px 0 8px; }
+.hero img { border-radius: 22px; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12); }
+.hero h1 { font-size: 2.4rem; margin-top: 16px; }
+.hero p { color: var(--muted); margin: 4px 0; }
+.cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); margin: 28px 0; }
+.card {
+  display: block; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 18px 20px; color: var(--text); text-decoration: none; min-height: 56px;
+}
+.card:hover { border-color: var(--accent); }
+.card strong { display: block; font-size: 1.1rem; color: var(--accent); }
+.card span { color: var(--muted); font-size: 0.95rem; }
+
+/* Footer */
+.foot { color: var(--muted); font-size: 0.9rem; padding-bottom: 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+.foot p { margin: 0; }
+
+@media print {
+  .top, .foot, .skip { display: none; }
+  .doc { border: 0; padding: 0; }
+  body { background: #fff; color: #000; }
+}
