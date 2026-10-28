@@ -3,7 +3,7 @@ title: Napp
 ---
 
 <div class="hero">
-  <img src="{{ '/assets/icon.png' | relative_url }}" alt="" width="96" height="96">
+  <img src="{{ '/assets/icon-512.png' | relative_url }}" alt="Napp" width="112" height="112">
   <h1>Napp</h1>
   <p lang="fi">Kalastussovellus Suomen vesille</p>
   <p lang="sv">Fiskeappen för Finlands vatten</p>
