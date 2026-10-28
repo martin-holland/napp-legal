@@ -27,7 +27,7 @@ Napp säilyttää seuraavat tiedot vain sovelluksen tallennustilassa puhelimessa
 - saaliskirjasi ja kalastuskertasi;
 - saaliiden ja kalastuskertojen GPS-sijainnit;
 - suosikkivetesi, kielivalintasi ja asetuksesi;
-- tiedon siitä, onko sinulla Napp Full;
+- tiedon siitä, onko sinulla Napp Full tilauksena tai kertaostona, sekä milloin tilaus päättyy tai kauppa viimeksi vahvisti sen;
 - kopiot sovelluksen hakemista tiedoista, jotta sovellus toimii myös ilman verkkoyhteyttä.
 
 Napp ei lähetä näitä tietoja minnekään.
@@ -71,7 +71,7 @@ Ilmatieteen laitos, Syke, Kalastusrajoitus-palvelu ja OpenFreeMap käsittelevät
 
 ## Ostot
 
-Napp Fullia myydään App Storessa ja Google Playssa. Maksun käsittelee Apple tai Google omien ehtojensa mukaisesti. Napp saa vain kaupan vahvistuksen siitä, että Napp Full on ostettu, ja säilyttää sen puhelimessasi. Emme koskaan näe maksutietojasi.
+Napp Fullia myydään App Storessa ja Google Playssa tilauksena tai kertaostona. Maksun ja mahdollisen ilmaisen kokeilun käsittelee Apple tai Google omien ehtojensa mukaisesti. Napp saa vain kaupan vahvistuksen siitä, mitä sinulla on (tilauksesta myös kuluvan jakson päättymisajan, jos kauppa sen kertoo), ja säilyttää sen vain puhelimessasi, jotta sovellus aukeaa ilman verkkoyhteyttä ja lakkaa avaamasta Napp Fullia, kun tilaus päättyy. Emme koskaan näe maksutietojasi.
 
 ## Linkit
 

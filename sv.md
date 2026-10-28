@@ -27,7 +27,7 @@ Napp sparar följande endast i appens lagring i telefonen:
 - din fångstdagbok och dina fiskepass;
 - GPS-positionerna för dina fångster och fiskepass;
 - dina favoritvatten, ditt språkval och dina inställningar;
-- uppgiften om du äger Napp Full;
+- uppgiften om du har Napp Full som prenumeration eller engångsköp, och när en prenumeration tar slut eller senast bekräftades av butiken;
 - kopior av de data som appen har hämtat, så att den fungerar utan uppkoppling.
 
 Napp laddar aldrig upp något av detta.
@@ -71,7 +71,7 @@ Meteorologiska institutet, Syke, tjänsten Kalastusrajoitus och OpenFreeMap hant
 
 ## Köp
 
-Napp Full säljs via App Store eller Google Play. Apple eller Google hanterar betalningen enligt sina egna villkor. Napp får bara butikens bekräftelse på att Napp Full har köpts och sparar den i telefonen. Vi ser aldrig dina betalningsuppgifter.
+Napp Full säljs via App Store eller Google Play, som prenumeration eller engångsköp. Apple eller Google hanterar betalningen och en eventuell gratis provperiod enligt sina egna villkor. Napp får bara butikens bekräftelse på vad du har (för en prenumeration även när den aktuella perioden tar slut, om butiken anger det) och sparar den bara i telefonen, så att appen öppnas upplåst utan nät och slutar låsa upp när prenumerationen tar slut. Vi ser aldrig dina betalningsuppgifter.
 
 ## Länkar
 

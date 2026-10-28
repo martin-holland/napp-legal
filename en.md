@@ -27,7 +27,7 @@ Napp keeps the following only in the app's storage on your phone:
 - your catch log and fishing sessions;
 - the GPS positions of your catches and sessions;
 - your favourite waters, language choice and settings;
-- whether you own Napp Full;
+- whether you have Napp Full, by a subscription or the lifetime purchase, and when a subscription ends or was last confirmed by the store;
 - copies of the data the app has fetched, so it works offline.
 
 Napp never uploads any of this.
@@ -71,7 +71,7 @@ FMI, Syke, the Kalastusrajoitus service and OpenFreeMap handle their own server 
 
 ## Purchases
 
-Napp Full is sold through the App Store or Google Play. Apple or Google handles the payment under their own terms. Napp receives only the store's confirmation that Napp Full was bought, and keeps that on your phone. We never see your payment details.
+Napp Full is sold through the App Store or Google Play, as a subscription or a lifetime purchase. Apple or Google handles the payment and any free trial under their own terms. Napp receives only the store's confirmation of what you have (for a subscription, also when its current period ends, where the store says), and keeps that on your phone only, so the app opens unlocked offline and stops unlocking when a subscription ends. We never see your payment details.
 
 ## Links
 
