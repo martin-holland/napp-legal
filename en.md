@@ -6,7 +6,7 @@ permalink: /en/
 
 # Napp privacy policy
 
-Last updated: 28 October 2026
+Last updated: 29 October 2026
 
 Napp is a fishing app for Finnish waters. This policy explains what happens to your data when you use the app. In short:
 
@@ -25,7 +25,7 @@ Contact: dev@beacon-international.org
 Napp keeps the following only in the app's storage on your phone:
 
 - your catch log and fishing sessions;
-- the GPS positions of your catches and sessions;
+- the GPS positions of your catches and sessions, and the exact sea spots you pick on the map;
 - your favourite waters, language choice and settings;
 - whether you have Napp Full, by a subscription or the lifetime purchase, and when a subscription ends or was last confirmed by the store;
 - copies of the data the app has fetched, so it works offline.
@@ -38,13 +38,14 @@ If backups are turned on in your phone (Google or iCloud), the phone includes th
 
 Napp asks for location only while you use the app, and only to save where you caught a fish. There is no background tracking. Location is optional: you can refuse or withdraw the permission in your phone's settings. The app still works, but catches are then saved without a spot.
 
-Conditions for a session or catch are fetched for the lake you chose, not for your position. If a catch were ever saved without a lake, the app would use your position rounded to 0.1 degrees (about 10 km) instead. Your exact position is never sent.
+Conditions for a session or catch are fetched for the lake you chose, not for your position. At sea, they are fetched for the sea spot you picked on the map, rounded to 0.1 degrees (about 5 to 10 km). If a catch were ever saved without a lake or sea spot, the app would use your position rounded to 0.1 degrees instead. Your exact position is never sent.
 
 ## What the app sends, and why
 
 To show weather, water temperature, water level, ice and fishing rules, the app requests open data. Each request contains one of the following:
 
 - **A lake's register point or number:** taken from the public Finnish lake register, sent when you open a lake, see it on the map, or log a session or catch there. It is not your GPS position. However, because a lake looked up while you log a catch is probably where you are, we treat these requests as approximate location.
+- **A sea spot, rounded:** when you pick a spot on the sea on the map, open it, or log a session or catch there, the app sends that spot rounded to 0.1 degrees (about 5 to 10 km), never the exact point. Because it is roughly where you fish, we treat these requests as approximate location.
 - **The map area on your screen:** map tiles are requested for the area you are viewing. The map never follows your GPS position.
 - **A lake name:** the text you type when you search for a lake.
 

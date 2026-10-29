@@ -6,7 +6,7 @@ permalink: /fi/
 
 # Nappin tietosuojaseloste
 
-Päivitetty: 28.10.2026
+Päivitetty: 29.10.2026
 
 Napp on kalastussovellus Suomen vesille. Tässä selosteessa kerrotaan, mitä tiedoillesi tapahtuu, kun käytät sovellusta. Lyhyesti:
 
@@ -25,7 +25,7 @@ Yhteystieto: dev@beacon-international.org
 Napp säilyttää seuraavat tiedot vain sovelluksen tallennustilassa puhelimessasi:
 
 - saaliskirjasi ja kalastuskertasi;
-- saaliiden ja kalastuskertojen GPS-sijainnit;
+- saaliiden ja kalastuskertojen GPS-sijainnit sekä kartalta merellä valitsemiesi paikkojen tarkat sijainnit;
 - suosikkivetesi, kielivalintasi ja asetuksesi;
 - tiedon siitä, onko sinulla Napp Full tilauksena tai kertaostona, sekä milloin tilaus päättyy tai kauppa viimeksi vahvisti sen;
 - kopiot sovelluksen hakemista tiedoista, jotta sovellus toimii myös ilman verkkoyhteyttä.
@@ -38,13 +38,14 @@ Jos puhelimesi varmuuskopiointi on päällä (Google tai iCloud), puhelin sisäl
 
 Napp pyytää sijaintia vain silloin, kun käytät sovellusta, ja vain tallentaakseen saaliin paikan. Taustaseurantaa ei ole. Sijainti on vapaaehtoinen: voit evätä luvan tai perua sen puhelimen asetuksista. Sovellus toimii silloinkin, mutta saaliit tallentuvat ilman paikkaa.
 
-Kalastuskerran tai saaliin olosuhteet haetaan valitsemallesi järvelle, ei sinun sijainnillesi. Jos saalis joskus tallentuisi ilman järveä, sovellus käyttäisi sen sijaan sijaintiasi pyöristettynä 0,1 asteeseen (noin 10 km). Tarkkaa sijaintiasi ei koskaan lähetetä.
+Kalastuskerran tai saaliin olosuhteet haetaan valitsemallesi järvelle, ei sinun sijainnillesi. Merellä ne haetaan kartalta valitsemallesi paikalle pyöristettynä 0,1 asteeseen (noin 5-10 km). Jos saalis joskus tallentuisi ilman järveä tai paikkaa merellä, sovellus käyttäisi sen sijaan sijaintiasi pyöristettynä 0,1 asteeseen. Tarkkaa sijaintiasi ei koskaan lähetetä.
 
 ## Mitä sovellus lähettää ja miksi
 
 Näyttääkseen sään, veden lämpötilan, vedenkorkeuden, jäätiedot ja kalastussäännöt sovellus hakee avointa dataa. Kussakin pyynnössä on jokin seuraavista:
 
 - **Järven rekisteripiste tai -numero:** julkisesta Suomen järvirekisteristä. Se lähetetään, kun avaat järven, näet sen kartalla tai kirjaat sille kalastuskerran tai saaliin. Se ei ole GPS-sijaintisi. Koska saalista kirjatessa haettu järvi on kuitenkin todennäköisesti se, jolla olet, käsittelemme näitä pyyntöjä likimääräisenä sijaintina.
+- **Paikka merellä pyöristettynä:** kun valitset kartalta paikan merellä, avaat sen tai kirjaat sille kalastuskerran tai saaliin, sovellus lähettää paikan pyöristettynä 0,1 asteeseen (noin 5-10 km), ei koskaan tarkkaa pistettä. Koska se on suunnilleen siellä, missä kalastat, käsittelemme näitä pyyntöjä likimääräisenä sijaintina.
 - **Näytölläsi oleva kartta-alue:** karttatiilet haetaan sille alueelle, jota katselet. Kartta ei koskaan seuraa GPS-sijaintiasi.
 - **Järven nimi:** teksti, jonka kirjoitat järvihakuun.
 

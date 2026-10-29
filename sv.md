@@ -6,7 +6,7 @@ permalink: /sv/
 
 # Napps integritetspolicy
 
-Senast uppdaterad: 28.10.2026
+Senast uppdaterad: 29.10.2026
 
 Napp är en fiskeapp för Finlands vatten. Den här policyn förklarar vad som händer med dina uppgifter när du använder appen. Kort sagt:
 
@@ -25,7 +25,7 @@ Kontakt: dev@beacon-international.org
 Napp sparar följande endast i appens lagring i telefonen:
 
 - din fångstdagbok och dina fiskepass;
-- GPS-positionerna för dina fångster och fiskepass;
+- GPS-positionerna för dina fångster och fiskepass, och de exakta platser till havs som du väljer på kartan;
 - dina favoritvatten, ditt språkval och dina inställningar;
 - uppgiften om du har Napp Full som prenumeration eller engångsköp, och när en prenumeration tar slut eller senast bekräftades av butiken;
 - kopior av de data som appen har hämtat, så att den fungerar utan uppkoppling.
@@ -38,13 +38,14 @@ Om säkerhetskopiering är påslagen i telefonen (Google eller iCloud) tar telef
 
 Napp ber om platsen bara medan du använder appen, och bara för att spara var du fick en fisk. Det finns ingen spårning i bakgrunden. Platsen är frivillig: du kan neka eller återkalla behörigheten i telefonens inställningar. Appen fungerar ändå, men fångster sparas då utan plats.
 
-Förhållandena för ett fiskepass eller en fångst hämtas för den sjö du har valt, inte för din position. Om en fångst någon gång sparades utan sjö skulle appen i stället använda din position avrundad till 0,1 grader (cirka 10 km). Din exakta position skickas aldrig.
+Förhållandena för ett fiskepass eller en fångst hämtas för den sjö du har valt, inte för din position. Till havs hämtas de för den plats du valde på kartan, avrundad till 0,1 grader (cirka 5-10 km). Om en fångst någon gång sparades utan sjö eller plats till havs skulle appen i stället använda din position avrundad till 0,1 grader. Din exakta position skickas aldrig.
 
 ## Vad appen skickar och varför
 
 För att visa väder, vattentemperatur, vattenstånd, is och fiskeregler hämtar appen öppna data. Varje förfrågan innehåller något av följande:
 
 - **En sjös registerpunkt eller nummer:** från det offentliga finländska sjöregistret. Den skickas när du öppnar en sjö, ser den på kartan eller loggar ett fiskepass eller en fångst där. Den är inte din GPS-position. Eftersom en sjö som hämtas medan du loggar en fångst ändå sannolikt är den där du är, behandlar vi dessa förfrågningar som ungefärlig plats.
+- **En plats till havs, avrundad:** när du väljer en plats på havet på kartan, öppnar den eller loggar ett fiskepass eller en fångst där, skickar appen platsen avrundad till 0,1 grader (cirka 5-10 km), aldrig den exakta punkten. Eftersom den ungefär är där du fiskar, behandlar vi dessa förfrågningar som ungefärlig plats.
 - **Kartområdet på skärmen:** kartrutor hämtas för det område du tittar på. Kartan följer aldrig din GPS-position.
 - **Ett sjönamn:** texten du skriver när du söker efter en sjö.
 
