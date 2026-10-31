@@ -6,7 +6,7 @@ permalink: /en/
 
 # Napp privacy policy
 
-Last updated: 29 October 2026
+Last updated: 31 October 2026
 
 Napp is a fishing app for Finnish waters. This policy explains what happens to your data when you use the app. In short:
 
@@ -44,7 +44,7 @@ Conditions for a session or catch are fetched for the lake you chose, not for yo
 
 To show weather, water temperature, water level, ice and fishing rules, the app requests open data. Each request contains one of the following:
 
-- **A lake's register point or number:** taken from the public Finnish lake register, sent when you open a lake, see it on the map, or log a session or catch there. It is not your GPS position. However, because a lake looked up while you log a catch is probably where you are, we treat these requests as approximate location.
+- **A lake's register point or number:** taken from the public Finnish lake register (for the satellite ice reading, a small area around that point), sent when you open a lake, see it on the map, or log a session or catch there. It is not your GPS position. However, because a lake looked up while you log a catch is probably where you are, we treat these requests as approximate location.
 - **A sea spot, rounded:** when you pick a spot on the sea on the map, open it, or log a session or catch there, the app sends that spot rounded to 0.1 degrees (about 5 to 10 km), never the exact point. Because it is roughly where you fish, we treat these requests as approximate location.
 - **The map area on your screen:** map tiles are requested for the area you are viewing. The map never follows your GPS position.
 - **A lake name:** the text you type when you search for a lake.
@@ -56,19 +56,20 @@ These requests go to:
 | Service | What for | Who runs it |
 | --- | --- | --- |
 | Napp's server (Supabase, EU region) | Fetches and caches weather, water and restriction data, and serves updates to species profiles and rules | Supabase on our behalf (processor) |
-| Finnish Environment Institute, Syke (rajapinnat.ymparisto.fi) | Lake search and lake details, always directly; water temperature, level and ice when our server cannot be reached | Syke |
-| Finnish Meteorological Institute (opendata.fmi.fi) | Weather and forecasts, when our server cannot be reached | FMI |
+| Finnish Environment Institute, Syke (rajapinnat.ymparisto.fi, geoserver2.ymparisto.fi) | Lake search and lake details, always directly; water temperature, level, ice and satellite lake ice when our server cannot be reached | Syke |
+| Finnish Meteorological Institute (opendata.fmi.fi) | Weather and forecasts, and at sea the sea temperature, sea level and waves, when our server cannot be reached | FMI |
+| Copernicus Marine Service (wmts.marine.copernicus.eu) | Satellite sea temperature for a rounded sea spot, when our server cannot be reached | Mercator Ocean International, for the EU |
 | Kalastusrajoitus service (avoinkara-mmm.ruokavirasto-awsa.com, MMM, run by the Finnish Food Authority) | Local fishing restrictions, when our server cannot be reached | MMM / Ruokavirasto |
 | OpenFreeMap (tiles.openfreemap.org) | Map tiles | OpenFreeMap |
 
 **On Napp's server:**
 
-- **The cache:** fetched open data is cached by lake point or map cell, not linked to you or your device. Entries are deleted after their lifetime: weather within about 5 hours, fishing restrictions within about 28 hours, and lists of measuring stations on a lake (by lake number) within about 8 days.
+- **The cache:** fetched open data is cached by lake point or map cell, not linked to you or your device. Entries are deleted after their lifetime: weather within about 5 hours, satellite readings within about 9 hours, fishing restrictions within about 28 hours, and lists of measuring stations on a lake (by lake number) within about 8 days.
 - **The logs:** the hosting provider's request logs hold each request's address (including the lake point or number asked for), your IP address and the time. On our current plan they are kept for 1 day, and in any case at most 7 days, to run and secure the service. Supabase and its network providers (Cloudflare, AWS) keep their own infrastructure logs under our data processing agreement.
 - **Use:** we do not use the cache or the logs to identify or follow anyone, and we cannot link them to a person unless you give us your IP address and the time (GDPR Article 11).
 - **Legal basis:** our legitimate interest in running the app you chose to use, reliably and securely (GDPR Article 6(1)(f)). Napp makes no automated decisions about you.
 
-FMI, Syke, the Kalastusrajoitus service and OpenFreeMap handle their own server logs under their own privacy terms.
+FMI, Syke, Copernicus Marine, the Kalastusrajoitus service and OpenFreeMap handle their own server logs under their own privacy terms.
 
 ## Purchases
 

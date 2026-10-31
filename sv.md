@@ -6,7 +6,7 @@ permalink: /sv/
 
 # Napps integritetspolicy
 
-Senast uppdaterad: 29.10.2026
+Senast uppdaterad: 31.10.2026
 
 Napp är en fiskeapp för Finlands vatten. Den här policyn förklarar vad som händer med dina uppgifter när du använder appen. Kort sagt:
 
@@ -44,7 +44,7 @@ Förhållandena för ett fiskepass eller en fångst hämtas för den sjö du har
 
 För att visa väder, vattentemperatur, vattenstånd, is och fiskeregler hämtar appen öppna data. Varje förfrågan innehåller något av följande:
 
-- **En sjös registerpunkt eller nummer:** från det offentliga finländska sjöregistret. Den skickas när du öppnar en sjö, ser den på kartan eller loggar ett fiskepass eller en fångst där. Den är inte din GPS-position. Eftersom en sjö som hämtas medan du loggar en fångst ändå sannolikt är den där du är, behandlar vi dessa förfrågningar som ungefärlig plats.
+- **En sjös registerpunkt eller nummer:** från det offentliga finländska sjöregistret (för satellitens isobservation ett litet område runt punkten). Den skickas när du öppnar en sjö, ser den på kartan eller loggar ett fiskepass eller en fångst där. Den är inte din GPS-position. Eftersom en sjö som hämtas medan du loggar en fångst ändå sannolikt är den där du är, behandlar vi dessa förfrågningar som ungefärlig plats.
 - **En plats till havs, avrundad:** när du väljer en plats på havet på kartan, öppnar den eller loggar ett fiskepass eller en fångst där, skickar appen platsen avrundad till 0,1 grader (cirka 5-10 km), aldrig den exakta punkten. Eftersom den ungefär är där du fiskar, behandlar vi dessa förfrågningar som ungefärlig plats.
 - **Kartområdet på skärmen:** kartrutor hämtas för det område du tittar på. Kartan följer aldrig din GPS-position.
 - **Ett sjönamn:** texten du skriver när du söker efter en sjö.
@@ -56,19 +56,20 @@ Förfrågningarna går till:
 | Tjänst | Till vad | Vem som driver den |
 | --- | --- | --- |
 | Napps server (Supabase, EU-region) | Hämtar och cachar väder-, vatten- och begränsningsdata, och delar ut uppdateringar av artprofiler och regler | Supabase för vår räkning (biträde) |
-| Finlands miljöcentral Syke (rajapinnat.ymparisto.fi) | Sjösökning och sjöuppgifter, alltid direkt; vattentemperatur, vattenstånd och is när vår server inte svarar | Syke |
-| Meteorologiska institutet (opendata.fmi.fi) | Väder och prognoser när vår server inte svarar | Meteorologiska institutet |
+| Finlands miljöcentral Syke (rajapinnat.ymparisto.fi, geoserver2.ymparisto.fi) | Sjösökning och sjöuppgifter, alltid direkt; vattentemperatur, vattenstånd, is och sjöis från satellit när vår server inte svarar | Syke |
+| Meteorologiska institutet (opendata.fmi.fi) | Väder och prognoser, och till havs havstemperatur, havsvattenstånd och vågor, när vår server inte svarar | Meteorologiska institutet |
+| Copernicus Marine Service (wmts.marine.copernicus.eu) | Havstemperatur från satellit för en avrundad plats till havs när vår server inte svarar | Mercator Ocean International för EU:s räkning |
 | Tjänsten Kalastusrajoitus (avoinkara-mmm.ruokavirasto-awsa.com, JSM, drivs av Livsmedelsverket) | Lokala fiskebegränsningar när vår server inte svarar | JSM / Livsmedelsverket |
 | OpenFreeMap (tiles.openfreemap.org) | Kartrutor | OpenFreeMap |
 
 **På Napps server:**
 
-- **Cachen:** hämtade öppna data cachas med sjöns punkt eller en kartruta som nyckel och kopplas inte till dig eller din enhet. Posterna raderas när deras giltighetstid har gått ut: väder inom cirka 5 timmar, fiskebegränsningar inom cirka 28 timmar och listor över mätstationer i en sjö (efter sjönummer) inom cirka 8 dagar.
+- **Cachen:** hämtade öppna data cachas med sjöns punkt eller en kartruta som nyckel och kopplas inte till dig eller din enhet. Posterna raderas när deras giltighetstid har gått ut: väder inom cirka 5 timmar, satellitobservationer inom cirka 9 timmar, fiskebegränsningar inom cirka 28 timmar och listor över mätstationer i en sjö (efter sjönummer) inom cirka 8 dagar.
 - **Loggarna:** leverantörens förfrågningsloggar innehåller varje förfrågans adress (även den sjöpunkt eller det sjönummer som efterfrågades), din IP-adress och tidpunkten. Med vår nuvarande plan sparas de i en dag, och i alla fall högst 7 dagar, för att driva och skydda tjänsten. Supabase och dess nätverksleverantörer (Cloudflare, AWS) sparar sina egna infrastrukturloggar enligt vårt personuppgiftsbiträdesavtal.
 - **Användning:** vi använder varken cachen eller loggarna för att identifiera eller följa någon, och vi kan inte koppla dem till en person om du inte ger oss din IP-adress och tidpunkten (artikel 11 i dataskyddsförordningen).
 - **Rättslig grund:** vårt berättigade intresse av att driva den app du har valt att använda på ett tillförlitligt och säkert sätt (artikel 6.1 f i dataskyddsförordningen). Napp fattar inga automatiserade beslut om dig.
 
-Meteorologiska institutet, Syke, tjänsten Kalastusrajoitus och OpenFreeMap hanterar sina egna serverloggar enligt sina egna integritetsvillkor.
+Meteorologiska institutet, Syke, Copernicus Marine, tjänsten Kalastusrajoitus och OpenFreeMap hanterar sina egna serverloggar enligt sina egna integritetsvillkor.
 
 ## Köp
 
