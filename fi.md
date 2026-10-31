@@ -44,7 +44,7 @@ Kalastuskerran tai saaliin olosuhteet haetaan valitsemallesi järvelle, ei sinun
 
 Näyttääkseen sään, veden lämpötilan, vedenkorkeuden, jäätiedot ja kalastussäännöt sovellus hakee avointa dataa. Kussakin pyynnössä on jokin seuraavista:
 
-- **Järven rekisteripiste tai -numero:** julkisesta Suomen järvirekisteristä (satelliitin jäähavainnossa pieni alue pisteen ympäriltä). Se lähetetään, kun avaat järven, näet sen kartalla tai kirjaat sille kalastuskerran tai saaliin. Se ei ole GPS-sijaintisi. Koska saalista kirjatessa haettu järvi on kuitenkin todennäköisesti se, jolla olet, käsittelemme näitä pyyntöjä likimääräisenä sijaintina.
+- **Järven rekisteripiste tai -numero:** julkisesta Suomen järvirekisteristä (satelliitin jäähavainnossa pieni alue pisteen ympärillä). Se lähetetään, kun avaat järven, näet sen kartalla tai kirjaat sille kalastuskerran tai saaliin. Se ei ole GPS-sijaintisi. Koska saalista kirjatessa haettu järvi on kuitenkin todennäköisesti se, jolla olet, käsittelemme näitä pyyntöjä likimääräisenä sijaintina.
 - **Paikka merellä pyöristettynä:** kun valitset kartalta paikan merellä, avaat sen tai kirjaat sille kalastuskerran tai saaliin, sovellus lähettää paikan pyöristettynä 0,1 asteeseen (noin 5-10 km), ei koskaan tarkkaa pistettä. Koska se on suunnilleen siellä, missä kalastat, käsittelemme näitä pyyntöjä likimääräisenä sijaintina.
 - **Näytölläsi oleva kartta-alue:** karttatiilet haetaan sille alueelle, jota katselet. Kartta ei koskaan seuraa GPS-sijaintiasi.
 - **Järven nimi:** teksti, jonka kirjoitat järvihakuun.
@@ -56,15 +56,15 @@ Pyynnöt menevät näille palveluille:
 | Palvelu | Mihin | Ylläpitäjä |
 | --- | --- | --- |
 | Nappin palvelin (Supabase, EU-alue) | Hakee sää-, vesi- ja rajoitustiedot ja tallentaa ne välimuistiin sekä jakaa päivitykset lajiprofiileihin ja sääntöihin | Supabase meidän lukuunamme (käsittelijä) |
-| Suomen ympäristökeskus Syke (rajapinnat.ymparisto.fi, geoserver2.ymparisto.fi) | Järvihaku ja järven tiedot aina suoraan; veden lämpötila, vedenkorkeus, jää ja järvien jäätilanne satelliitista silloin, kun palvelimemme ei vastaa | Syke |
-| Ilmatieteen laitos (opendata.fmi.fi) | Sää ja ennusteet sekä merellä meriveden lämpötila, merivedenkorkeus ja aallokko silloin, kun palvelimemme ei vastaa | Ilmatieteen laitos |
-| Copernicus Marine Service (wmts.marine.copernicus.eu) | Meriveden lämpötila satelliitista pyöristetylle paikalle merellä silloin, kun palvelimemme ei vastaa | Mercator Ocean International EU:n lukuun |
-| Kalastusrajoitus-palvelu (avoinkara-mmm.ruokavirasto-awsa.com, MMM, ylläpitäjänä Ruokavirasto) | Paikalliset kalastusrajoitukset silloin, kun palvelimemme ei vastaa | MMM / Ruokavirasto |
+| Suomen ympäristökeskus Syke (rajapinnat.ymparisto.fi, geoserver2.ymparisto.fi) | Järvihaku ja järven tiedot aina suoraan; veden lämpötila, vedenkorkeus, jää ja järvien jäätilanne satelliittikuvista silloin, kun palvelimemme ei voi toimittaa tietoja | Syke |
+| Ilmatieteen laitos (opendata.fmi.fi) | Sää ja ennusteet sekä merellä meriveden lämpötila, merivedenkorkeus ja aallokko silloin, kun palvelimemme ei voi toimittaa tietoja | Ilmatieteen laitos |
+| Copernicus Marine Service (wmts.marine.copernicus.eu) | Meriveden lämpötila satelliitista pyöristetylle paikalle merellä silloin, kun palvelimemme ei voi toimittaa tietoja | Mercator Ocean International EU:n lukuun |
+| Kalastusrajoitus-palvelu (avoinkara-mmm.ruokavirasto-awsa.com, MMM, ylläpitäjänä Ruokavirasto) | Paikalliset kalastusrajoitukset silloin, kun palvelimemme ei voi toimittaa tietoja | MMM / Ruokavirasto |
 | OpenFreeMap (tiles.openfreemap.org) | Karttatiilet | OpenFreeMap |
 
 **Nappin palvelimella:**
 
-- **Välimuisti:** haettu avoin data tallennetaan välimuistiin, ja tunnisteena on järven piste tai karttaruutu. Sitä ei yhdistetä sinuun eikä laitteeseesi. Tiedot poistetaan niiden voimassaolon päätyttyä: säätiedot noin 5 tunnin, satelliittihavainnot noin 9 tunnin, kalastusrajoitukset noin 28 tunnin ja järven mittausasemien luettelot (järvinumeron mukaan) noin 8 päivän kuluessa.
+- **Välimuisti:** haettu avoin data tallennetaan välimuistiin, ja tunnisteena on järven piste tai karttaruutu. Sitä ei yhdistetä sinuun eikä laitteeseesi. Tiedot poistetaan niiden voimassaolon päätyttyä: sää- ja meriennusteet noin 5 tunnin, satelliittihavainnot noin 10 tunnin, kalastusrajoitukset noin 28 tunnin ja järven mittausasemien luettelot (järvinumeron mukaan) noin 8 päivän kuluessa.
 - **Lokit:** palveluntarjoajan pyyntölokeissa on kunkin pyynnön osoite (myös haettu järven piste tai numero), IP-osoitteesi ja aika. Nykyisellä palvelutasollamme ne säilyvät yhden päivän ja joka tapauksessa enintään 7 päivää palvelun ylläpitoa ja tietoturvaa varten. Supabase ja sen verkkopalveluntarjoajat (Cloudflare, AWS) säilyttävät omia infrastruktuurilokejaan tietojenkäsittelysopimuksemme mukaisesti.
 - **Käyttö:** emme käytä välimuistia emmekä lokeja kenenkään tunnistamiseen tai seuraamiseen. Emme voi yhdistää niitä henkilöön, ellet anna meille IP-osoitettasi ja ajankohtaa (tietosuoja-asetuksen 11 artikla).
 - **Käsittelyperuste:** oikeutettu etumme pitää käyttöön ottamasi sovellus toimivana ja turvallisena (tietosuoja-asetuksen 6 artiklan 1 kohdan f alakohta). Napp ei tee sinusta automaattisia päätöksiä.
