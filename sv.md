@@ -6,13 +6,13 @@ permalink: /sv/
 
 # Napps integritetspolicy
 
-Senast uppdaterad: 31.10.2026
+Senast uppdaterad: 1.11.2026
 
 Napp är en fiskeapp för Finlands vatten. Den här policyn förklarar vad som händer med dina uppgifter när du använder appen. Kort sagt:
 
 - Napp har inga konton, inga annonser, inga analysverktyg och ingen spårning.
-- Din fångstdagbok och dina exakta fiskeplatser stannar i telefonen.
-- För att hämta väder-, vatten- och regeldata frågar appen öppna datatjänster om sjöar med hjälp av sjöarnas offentliga registerpunkter.
+- Din fångstdagbok, dina fångstfoton och dina exakta fiskeplatser stannar i telefonen, om du inte själv exporterar dagboken.
+- För att hämta väder-, vatten- och regeldata frågar appen öppna datatjänster om sjöar med hjälp av sjöarnas offentliga registerpunkter, och om platser till havs och det kartområde du tittar på, avrundade till rutor på 0,1 grader.
 
 ## Personuppgiftsansvarig
 
@@ -25,6 +25,7 @@ Kontakt: dev@beacon-international.org
 Napp sparar följande endast i appens lagring i telefonen:
 
 - din fångstdagbok och dina fiskepass;
+- de foton du lägger till en fångst (Napp Full). Napp sparar en egen kopia som är omkodad och rensad från fotots metadata, till exempel den GPS-position som kameran registrerade, tiden och kameramodellen. Ett foto du väljer finns kvar oförändrat i telefonens galleri. Napp sparar inte ett foto du tar i Napp i ditt galleri, men din kameraapp kan behålla en egen kopia;
 - GPS-positionerna för dina fångster och fiskepass, och de exakta platser till havs som du väljer på kartan;
 - dina favoritvatten, ditt språkval och dina inställningar;
 - uppgiften om du har Napp Full som prenumeration eller engångsköp, och när en prenumeration tar slut eller senast bekräftades av butiken;
@@ -32,21 +33,27 @@ Napp sparar följande endast i appens lagring i telefonen:
 
 Napp laddar aldrig upp något av detta.
 
-Om säkerhetskopiering är påslagen i telefonen (Google eller iCloud) tar telefonen med appens data i din egen säkerhetskopia, under ditt konto och enligt den tjänstens villkor. När du avinstallerar appen raderas uppgifterna från telefonen men inte från säkerhetskopior som redan har gjorts. Dem hanterar du i ditt Google- eller iCloud-konto.
+**Export av fångstdagboken (Napp Full):** när du trycker på "Exportera som CSV" i Fångstdagboken skapar appen en CSV-fil av din dagbok i telefonen och öppnar telefonens delningsmeny. Filen innehåller dina fiskepass och fångster med tider, arter, mått och sparade förhållanden; dina anteckningar och beten; namnen på vattnen där du fiskade; och de exakta koordinaterna för dina platser (var du fiskade under ett pass, var du fick varje fisk och de platser till havs som du valde). Den går bara dit du själv väljer att skicka den (e-post, en molntjänst, en annan app), enligt den tjänstens villkor. Napp får ingen kopia och samlar inte in något från den. En kopia kan ligga kvar i appens egen cache i telefonen till nästa export eller tills telefonen tömmer cachen.
+
+Om säkerhetskopiering är påslagen i telefonen (Google eller iCloud) tar telefonen med appens data i din egen säkerhetskopia, under ditt konto och enligt den tjänstens villkor. Fångstfotona lämnas utanför Androids säkerhetskopior; på en iPhone ingår de i enhetens säkerhetskopia (iCloud eller en dator). När du avinstallerar appen raderas uppgifterna från telefonen men inte från säkerhetskopior som redan har gjorts. Dem hanterar du i ditt Google- eller iCloud-konto.
 
 ## Platsbehörighet
 
 Napp ber om platsen bara medan du använder appen, och bara för att spara var du fick en fisk. Det finns ingen spårning i bakgrunden. Platsen är frivillig: du kan neka eller återkalla behörigheten i telefonens inställningar. Appen fungerar ändå, men fångster sparas då utan plats.
 
-Förhållandena för ett fiskepass eller en fångst hämtas för den sjö du har valt, inte för din position. Till havs hämtas de för den plats du valde på kartan, avrundad till 0,1 grader (cirka 5-10 km). Om en fångst någon gång sparades utan sjö eller plats till havs skulle appen i stället använda din position avrundad till 0,1 grader. Din exakta position skickas aldrig.
+Förhållandena för ett fiskepass eller en fångst hämtas för den sjö du har valt, inte för din position. Till havs hämtas de för den plats du valde på kartan, avrundad till 0,1 grader (cirka 5-11 km). Om en fångst någon gång sparades utan sjö eller plats till havs skulle appen i stället använda din position avrundad till 0,1 grader. Din exakta position skickas aldrig.
+
+## Kamera och foton
+
+Napp ber om kameran bara när du trycker på "Ta ett foto", och använder den bara för att ta det fotot. När du väljer foton används telefonens egen bildväljare: Napp får bara de foton du väljer och ber inte om behörighet till ditt bildbibliotek. Du kan neka eller återkalla kamerabehörigheten i telefonens inställningar; foton kan du ändå välja. Foton laddas aldrig upp och skickas ingenstans.
 
 ## Vad appen skickar och varför
 
 För att visa väder, vattentemperatur, vattenstånd, is och fiskeregler hämtar appen öppna data. Varje förfrågan innehåller något av följande:
 
 - **En sjös registerpunkt eller nummer:** från det offentliga finländska sjöregistret (för satellitens isobservation ett litet område runt punkten). Den skickas när du öppnar en sjö, ser den på kartan eller loggar ett fiskepass eller en fångst där. Den är inte din GPS-position. Eftersom en sjö som hämtas medan du loggar en fångst ändå sannolikt är den där du är, behandlar vi dessa förfrågningar som ungefärlig plats.
-- **En plats till havs, avrundad:** när du väljer en plats på havet på kartan, öppnar den eller loggar ett fiskepass eller en fångst där, skickar appen platsen avrundad till 0,1 grader (cirka 5-10 km), aldrig den exakta punkten. Eftersom den ungefär är där du fiskar, behandlar vi dessa förfrågningar som ungefärlig plats.
-- **Kartområdet på skärmen:** kartrutor hämtas för det område du tittar på. Kartan följer aldrig din GPS-position.
+- **En plats till havs, avrundad:** när du väljer en plats på havet på kartan, öppnar den eller loggar ett fiskepass eller en fångst där, skickar appen platsen avrundad till 0,1 grader (cirka 5-11 km), aldrig den exakta punkten. Eftersom den ungefär är där du fiskar, behandlar vi dessa förfrågningar som ungefärlig plats.
+- **Kartområdet på skärmen:** kartrutor hämtas för det område du tittar på. När du zoomar in tillräckligt hämtar appen också fiskebegränsningsområdena där: det synliga området som avrundade rutor på 0,1 grader (cirka 5-11 km), som skickas till Napps server eller, när den inte kan leverera uppgifterna, till tjänsten Kalastusrajoitus. Kartan följer aldrig din GPS-position.
 - **Ett sjönamn:** texten du skriver när du söker efter en sjö.
 
 Som vid alla förfrågningar på internet ser tjänsterna också din enhets IP-adress.
@@ -65,7 +72,7 @@ Förfrågningarna går till:
 **På Napps server:**
 
 - **Cachen:** hämtade öppna data cachas med sjöns punkt eller en kartruta som nyckel och kopplas inte till dig eller din enhet. Posterna raderas när deras giltighetstid har gått ut: väder- och havsprognoser inom cirka 5 timmar, satellitobservationer inom cirka 10 timmar, fiskebegränsningar inom cirka 28 timmar och listor över mätstationer i en sjö (efter sjönummer) inom cirka 8 dagar.
-- **Loggarna:** leverantörens förfrågningsloggar innehåller varje förfrågans adress (även den sjöpunkt eller det sjönummer som efterfrågades), din IP-adress och tidpunkten. Med vår nuvarande plan sparas de i en dag, och i alla fall högst 7 dagar, för att driva och skydda tjänsten. Supabase och dess nätverksleverantörer (Cloudflare, AWS) sparar sina egna infrastrukturloggar enligt vårt personuppgiftsbiträdesavtal.
+- **Loggarna:** leverantörens förfrågningsloggar innehåller varje förfrågans adress (även den sjöpunkt, det sjönummer eller den kartruta som efterfrågades), din IP-adress och tidpunkten. Med vår nuvarande plan sparas de i en dag, och i alla fall högst 7 dagar, för att driva och skydda tjänsten. Supabase och dess nätverksleverantörer (Cloudflare, AWS) sparar sina egna infrastrukturloggar enligt vårt personuppgiftsbiträdesavtal.
 - **Användning:** vi använder varken cachen eller loggarna för att identifiera eller följa någon, och vi kan inte koppla dem till en person om du inte ger oss din IP-adress och tidpunkten (artikel 11 i dataskyddsförordningen).
 - **Rättslig grund:** vårt berättigade intresse av att driva den app du har valt att använda på ett tillförlitligt och säkert sätt (artikel 6.1 f i dataskyddsförordningen). Napp fattar inga automatiserade beslut om dig.
 
